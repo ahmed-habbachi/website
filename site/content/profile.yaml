@@ -1,0 +1,36 @@
+- profile:
+  initials: AH
+  name: Ahmed HABBACHI
+  email: ahmed.habbachi@outlook.com
+  profession: Full Stack Developer
+  image: images/profile.jpg
+  location: Monastir, Tunisia
+  relocation: true
+  company: CASE Tunisia
+  for_hire: true
+  focus: Software development
+  focus_url: https://case-deutschland.de
+  about: |
+    Mainly I am a full stack developer (main stack Angular as frontend and ASP.Net core api as backend).
+    I Started my life with ".Net/.Net Core" (C#) solutions developer,wrote (ASP.Net /ASP.Net Core) Applications, Windows Application and Implemented end-user GPS application, then soon i understood that the web is the future.
+    
+    Lately focusing on Web technology and JavaScript/Typescript language and creating solutions with Angular framework.
+    
+    And on my spare times i am the sys admin of our small company;
+    - Installed and maintaining our domain controller.
+    - implementing Git and GitLab as version controller (with all CI/CD flow).
+    - And all VPN and File Sharing stuff.
+  skills:
+    - JavaScript / Typescript
+    - HTML / CSS
+    - C# / ASP.Net core
+  tools:
+    - Angular
+    - VSCode
+    - Visual studio
+    - RestAPI, GraphQL
+  budget:
+    currency: TND
+    min: 1
+    max: 30
+    default: 5

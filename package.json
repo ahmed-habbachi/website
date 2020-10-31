@@ -1,0 +1,16 @@
+{
+  "name": "ahmed-develop.net",
+  "private": true,
+  "version": "1.0.14",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn workspace site build",
+    "clean": "yarn workspace site clean",
+    "develop": "yarn workspace site develop"
+  },
+  "workspaces": [
+    "gatsby-theme-intro",
+    "site"
+  ]
+}

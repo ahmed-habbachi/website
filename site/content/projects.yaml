@@ -1,0 +1,54 @@
+- name: Veggui
+  url: https://www.auerswald.de
+  description: A Web framework based on bootstrap and adds a lot of new components or controls.
+  status: in progress
+  tags:
+    - Typescript
+    - Angular
+  icon: website
+
+- name: Track-it
+  url: https://trackit.case-deutschland.de
+  description: Track-it is a simple, easy to use web-based Time Tracking system. Use it to track time for yourself, your team, your project or your company. Track-it allows for tracking the time by Clients, Projects and Tasks.
+  status: in progress
+  tags:
+    - C#
+    - ASP.Net Core
+    - Angular
+    - Typescript
+    - Database agnostic
+  icon: website
+  image: images/track-it_project.jpg
+
+- name: Sharp Designer
+  url: https://www.bhleasing.tn/
+  description: Sharp designer is a windows forms generator, it generate, show and populate windows forms controls on run-time. it can use json based file configuration or database based configuration to get the windows forms controls and commands.
+  status: in progress
+  tags:
+    - C#
+    - Winforms
+    - Database agnostic
+  icon: github
+  image: images/sharp_designer_project.jpg
+
+- name: Voucher Center
+  url: https://vouchercenter.auerswald.de/Vouchers
+  description: Implementation and design of a voucher creation and distribution web system with identityServer implementation along with it, A REST full solution with ASP.Net Core web framework for designing and architecture.
+  status: live
+  tags:
+    - ASP.Net Core
+    - Entity Framework
+    - OAuth2, open-id
+    - MySQL
+  icon: website
+  image: images/voucher_center_project.jpg
+
+- name: Mirandola
+  url: https://www.mp-gruppe.de/en/company
+  description: Implementation and design of human resource management RESTfull API.
+  status: live
+  tags:
+    - C#
+    - ASP.Net Core
+    - MySQL
+  icon: website
