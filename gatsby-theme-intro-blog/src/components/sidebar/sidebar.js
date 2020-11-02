@@ -3,8 +3,9 @@ import Location from "./location"
 import ProfileImage from "./profile-image"
 import { arrayOf, shape, ProfileType, SocialType } from "../../types"
 import SocialLinks from "../social-links/social-links"
+import PostPreviewMain from "../../components/Post/post-preview-main"
 
-const Sidebar = ({ profile, social }) => (
+const Sidebar = ({ profile, social, showPostsInIndex, posts }) => (
   <aside className="w-full lg:w-1/3 lg:border-r border-line lg:px-6 xl:px-12">
     <div className="flex flex-col h-full justify-between">
       <div>
@@ -24,8 +25,8 @@ const Sidebar = ({ profile, social }) => (
             relocation={profile.relocation}
           />
         )}
+        { showPostsInIndex && posts ? <PostPreviewMain posts={posts} /> : null }
       </div>
-
       <div className="pt-8 pb-12 lg:py-0">
         <h5 className="font-header font-semibold text-front text-sm uppercase mb-3">
           Connect

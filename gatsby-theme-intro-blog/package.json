@@ -1,9 +1,12 @@
 {
-  "name": "@wkocjan/gatsby-theme-intro",
-  "description": "Personal branding theme for developers",
+  "name": "@ahmed-habbachi/gatsby-theme-intro-blog",
+  "description": "Personal branding and bloging theme for developers",
   "version": "1.0.14",
   "main": "index.js",
-  "author": "Wojciech Kocjan <wojciech@kocjan.net>",
+  "author": "Ahmed HABBACHI <ahmed.habbachi@outlook.com>",
+  "contributors": [
+    "Wojciech Kocjan <wojciech@kocjan.net>"
+  ],
   "dependencies": {
     "autoprefixer": "^9.7.6",
     "color": "^3.1.2",
@@ -12,7 +15,9 @@
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.5.6",
+    "gatsby-remark-images": "^3.3.40",
     "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.8.47",
     "gatsby-transformer-sharp": "^2.4.6",
     "gatsby-transformer-yaml": "^2.3.3",
     "postcss-input-range": "^4.0.0",

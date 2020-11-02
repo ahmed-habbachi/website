@@ -6,11 +6,12 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "@wkocjan/gatsby-theme-intro",
+      resolve: "@ahmed-habbachi/gatsby-theme-intro-blog",
       options: {
         basePath: "/",
         contentPath: "content/",
         showThemeLogo: true,
+        showPostsInIndex: true,
         theme: "gh-inspired",
       },
     },

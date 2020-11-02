@@ -10,7 +10,7 @@
     "develop": "yarn workspace site develop"
   },
   "workspaces": [
-    "gatsby-theme-intro",
+    "gatsby-theme-intro-blog",
     "site"
   ]
 }
