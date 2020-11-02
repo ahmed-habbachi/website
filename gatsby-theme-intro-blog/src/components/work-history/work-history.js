@@ -5,7 +5,7 @@ import "./work-history.css"
 const WorkHistory = ({ history }) => {
   return (
     <>
-      <h5 className="font-header font-semibold text-front text-sm uppercase mt-12 mb-3 text-center">
+      <h5 className="font-header font-semibold text-front text-md uppercase mt-12 mb-3 text-center">
         Work history
       </h5>
       <div className="history flex flex-col relative pt-6 pb-6">

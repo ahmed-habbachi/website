@@ -10,7 +10,7 @@ const ContactForm = ({ email, budget }) => {
   return (
     <>
       <h5
-        className="font-header font-semibold text-front text-sm uppercase mt-12 mb-3"
+        className="font-header font-semibold text-front text-md uppercase mt-12 mb-3"
         id="contact"
       >
         Contact
