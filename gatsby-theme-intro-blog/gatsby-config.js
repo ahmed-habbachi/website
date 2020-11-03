@@ -35,8 +35,15 @@ module.exports = ({
       {
         resolve: `gatsby-source-filesystem`,
         options: {
-          name: `posts`,
-          path: contentPath + '/posts/',
+          name: `images`,
+          path: `${contentPath}/images`,
+        },
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `pages`,
+          path: `${__dirname}/src/pages/`,
         },
       },
       {
@@ -44,24 +51,59 @@ module.exports = ({
       },
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
-      `gatsby-transformer-remark`,
-      // {
-      //   "resolve": `gatsby-transformer-remark`,
-      //   "options": {
-      //     "excerpt_separator": `<!-- more -->`,
-      //     plugins: [
-      //       {
-      //         resolve: `gatsby-remark-images`,
-      //         options: {
-      //           // It's important to specify the maxWidth (in pixels) of
-      //           // the content container as this plugin uses this as the
-      //           // base for generating different widths of each image.
-      //           maxWidth: 590,
-      //         },
-      //       },
-      //     ],
-      //   }
-      // },
+      // `gatsby-transformer-remark`,
+      {
+        resolve: `gatsby-transformer-remark`,
+        options: {
+          excerpt_separator: `<!-- more -->`,
+          plugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                // It's important to specify the maxWidth (in pixels) of
+                // the content container as this plugin uses this as the
+                // base for generating different widths of each image.
+                maxWidth: 590,
+              },
+            },
+          ],
+        }
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `posts`,
+          path: `${contentPath}/posts`,
+        },
+      },
+      {
+        resolve: `gatsby-plugin-page-creator`,
+        options: {
+          path: `${contentPath}/posts`,
+        },
+      },
+      {
+        resolve : `gatsby-plugin-mdx`,
+        options: {
+          extensions: [`.mdx`, `.md`],
+          defaultLayouts: {
+            // posts: require.resolve("./src/templates/posts-layout.js"),
+            default: require.resolve("./src/templates/posts-layout.js"),
+          },
+          gatsbyRemarkPlugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: 590,
+                linkImagesToOriginal: false,
+              },
+            },
+            { resolve: `gatsby-remark-copy-linked-files` },
+            { resolve: `gatsby-remark-smartypants` },
+          ],
+          remarkPlugins: [require(`remark-slug`)],
+        },
+      }
     ],
   }
 }

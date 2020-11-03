@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@ahmed-habbachi/gatsby-theme-intro-blog": "*",
-    "gatsby": "^2.20.12",
-    "react-dom": "^16.12.0",
-    "react": "^16.12.0"
+    "gatsby": "^2.24.92",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }

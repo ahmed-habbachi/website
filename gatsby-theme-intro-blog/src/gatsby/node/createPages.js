@@ -5,9 +5,4 @@ module.exports = async ({ actions }, options) => {
     path: basePath,
     component: require.resolve("../../templates/index.js"),
   })
-
-  // actions.createPage({
-  //   path: basePath,
-  //   component: require.resolve("../../templates/post.js"),
-  // })
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import LayoutTemplate from "../templates/layout"
-import PostPreview from "../components/Post/post-preview"
+import PostPreview from "../components/post/post-preview"
 import "../styles/style.css"
 
 const BlogPage = ({data}) => (
@@ -9,7 +9,7 @@ const BlogPage = ({data}) => (
       <main className="lg:w-2/3 lg:pl-8 xl:pl-12">
         <div className="py-12">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Blogs
+            Blog
           </h2>
             {data.allMarkdownRemark.edges.map((edge, index) => (
                 <PostPreview key={index} post={{

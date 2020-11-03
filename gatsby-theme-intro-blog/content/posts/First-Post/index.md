@@ -1,5 +1,5 @@
 ---
-path: '/First-post'
+path: '/first-post'
 title: How I start writing my blog
 date: 2017-10-20 13:57:08
 category: Writing

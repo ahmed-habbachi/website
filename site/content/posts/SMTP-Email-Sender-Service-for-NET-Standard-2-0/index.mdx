@@ -18,11 +18,17 @@ So to encapsulate that **.Net Standard 2.0** is your friend to target when you a
 
 I choose to use SMTP approach over any other stuff as I may be willing to change the host or domain server in future, so using smtp allow me to easily switch platforms. Starting by creating a new .Net standard Class library project;
 
+<br />
+
 ![New class library project](./New-CL-Project.png)
+
+<br />
 
 And then let’s prepare a class object, and we call it `AuthMessageSenderOptions`, that holds all the information that we are going to use in our `EmaiService`.
 
-``` csharp
+<br />
+
+```csharp
     public class AuthMessageSenderOptions
     {
         public string Domain { get; set; }
@@ -37,10 +43,12 @@ And then let’s prepare a class object, and we call it `AuthMessageSenderOption
     }
 ```
 
+<br />
 feel free to add stuff that you think we can use it later, just keep in mind that this is the sender stuff in some project I created another class for the receiver options but naah lets keep it simple for now ok!
 Thought we should follow the rules and create an interface for our mail service that holds the contract to allow us to use the ``SendEmail`` methods;
+<br />
 
-``` csharp
+```csharp
     public interface IEmailSender
     {
         Task SendEmailAsync(string email, string subject, string message);
@@ -48,9 +56,11 @@ Thought we should follow the rules and create an interface for our mail service 
     }
 ```
 
+<br />
 Create a new class, and name it `EmailSender`, then add our `AuthMessageSenderOptions` object in the constructor, and do not forget these using those are all what we need:
+<br />
 
-``` csharp
+```csharp
 using System;
 using System.Net;
 using System.Net.Mail;
@@ -70,9 +80,11 @@ namespace B2P.Extensions.MailService
 }
 ```
 
+<br />
 And we make the class inherits the `IEmailSender` interface and generate the two SendEmail actions and add them to our `EmailSender`, these are the three properties that I found necessary;
+<br />
 
-``` csharp
+```csharp
     public class EmailSender : IEmailSender
     {
         . . .
@@ -99,9 +111,11 @@ And we make the class inherits the `IEmailSender` interface and generate the two
     }
 ```
 
+<br />
 Now we should be preparing the `GetMailMessage` and  `GetSmtpClient` methods that will do the main initilization for us;
+<br />
 
-``` csharp
+```csharp
     public class EmailSender
     {
         . . .
@@ -185,9 +199,10 @@ public class EmailSender : IEmailSender
 ```
 
 Like that I can use my secrets and manage the properties from a JSON file, right click on your solution and choose  **Manage User Secrets** a JSON file is going to be opened
-![](UserSecrets.png)
+![user secrets](./UserSecrets.png)
+<br />
 
-``` JSON
+```json
 {
   "AuthMessageSenderOptions": {
     "Domain": "smtp.sendgrid.net",
@@ -201,9 +216,11 @@ Like that I can use my secrets and manage the properties from a JSON file, right
 }
 ```
 
+<br />
 The one and only thing that we should take care about now is to register our sender option configuration and use our `EmailSender` service as a Singleton:
+<br />
 
-``` csharp
+```csharp
         public void ConfigureServices(IServiceCollection services)
         {
             . . .
@@ -213,6 +230,7 @@ The one and only thing that we should take care about now is to register our sen
         }
 ```
 
+<br />
 like that as soon and our `EmailSender` gets initialize it’s going to look forward to get the sender options from configuration in our case from the user secrets, in other post I will include how to get options or configuration from database.
 
 I hope that this is helpful for you can find all the code in [Github](https://github.com/Capoutcha/MailService).
