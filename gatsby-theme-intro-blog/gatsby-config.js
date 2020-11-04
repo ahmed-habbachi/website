@@ -52,23 +52,23 @@ module.exports = ({
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
       // `gatsby-transformer-remark`,
-      {
-        resolve: `gatsby-transformer-remark`,
-        options: {
-          excerpt_separator: `<!-- more -->`,
-          plugins: [
-            {
-              resolve: `gatsby-remark-images`,
-              options: {
-                // It's important to specify the maxWidth (in pixels) of
-                // the content container as this plugin uses this as the
-                // base for generating different widths of each image.
-                maxWidth: 590,
-              },
-            },
-          ],
-        }
-      },
+      // {
+      //   resolve: `gatsby-transformer-remark`,
+      //   options: {
+      //     excerpt_separator: `<!-- more -->`,
+      //     plugins: [
+      //       {
+      //         resolve: `gatsby-remark-images`,
+      //         options: {
+      //           // It's important to specify the maxWidth (in pixels) of
+      //           // the content container as this plugin uses this as the
+      //           // base for generating different widths of each image.
+      //           maxWidth: 590,
+      //         },
+      //       },
+      //     ],
+      //   }
+      // },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
@@ -76,20 +76,20 @@ module.exports = ({
           path: `${contentPath}/posts`,
         },
       },
-      {
-        resolve: `gatsby-plugin-page-creator`,
-        options: {
-          path: `${contentPath}/posts`,
-        },
-      },
+      // {
+      //   resolve: `gatsby-plugin-page-creator`,
+      //   options: {
+      //     path: `${contentPath}/posts`,
+      //   },
+      // },
       {
         resolve : `gatsby-plugin-mdx`,
         options: {
           extensions: [`.mdx`, `.md`],
-          defaultLayouts: {
-            // posts: require.resolve("./src/templates/posts-layout.js"),
-            default: require.resolve("./src/templates/posts-layout.js"),
-          },
+          // defaultLayouts: {
+          //   // posts: require.resolve("./src/templates/posts-layout.js"),
+          //   default: require.resolve("./src/templates/posts-layout.js"),
+          // },
           gatsbyRemarkPlugins: [
             {
               resolve: `gatsby-remark-images`,

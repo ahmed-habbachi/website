@@ -5,10 +5,10 @@ import MainContent from "../components/main-content/main-content"
 import "../styles/style.css"
 
 const IndexPage = ({ data }) => {
-  const { history, profile, projects, allMarkdownRemark } = data
+  const { history, profile, projects, allMdx } = data
 
   return (
-      <LayoutTemplate posts={allMarkdownRemark.edges}>
+      <LayoutTemplate posts={allMdx.edges}>
         <MainContent
           profile={profile}
           history={history.nodes}
@@ -45,15 +45,16 @@ export const query = graphql`
         ...ProjectFragment
       }
     }
-    allMarkdownRemark(limit: 3, sort: {fields: frontmatter___date, order: DESC}) {
+    allMdx (limit: 3, sort: {fields: frontmatter___date, order: DESC}){
       edges {
         node {
+          id
+          slug
+          excerpt
           frontmatter {
             title
             date(formatString: "DD MMMM YYYY")
-            path
           }
-          excerpt
         }
       }
     }

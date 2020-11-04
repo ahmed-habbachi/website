@@ -5,7 +5,7 @@ import { FaRegNewspaper } from "react-icons/fa"
 const PostPreviewTitle = ({ path, title, showIcon, className }) => (
 
 
-      <Link to={`/posts${path}`} className={`${className} relative`}>
+      <Link to={`/${path}`} className={`${className} relative`}>
         {showIcon && <FaRegNewspaper className="inline-block h-5 w-5 md:mr-2 mr-1" />}
         {title}
       </Link>

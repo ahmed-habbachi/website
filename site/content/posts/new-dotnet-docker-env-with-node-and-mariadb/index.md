@@ -77,9 +77,9 @@ the build environment that i need for my project is an image that contains;
         dotnet help
     ```
 
-now type exit to exit the shell, and then 
+now type exit to exit the shell, and then
 
-```cmd
+```shell
     docker commit -a "**auther name**" -m "add dotnet sdk 2.1.402 to a nodejs image" nodedotnetsdk somerepo/acontainer_name
 ```
 
@@ -96,13 +96,13 @@ Therefor i need to get the necessary images;
 
 1. First lets get the mariadb image form [docker hub](hub.docker.com)
 
-    ```cmd
+    ```shell
         docker pull mariadb
     ```
 
 2. Second lets get the dotnet runtime image
 
-    ```cmd
+    ```shell
          docker pull microsoft/dotnet:2.1-aspnetcore-runtime
     ```
 
@@ -111,13 +111,13 @@ we don't need to do any change to the images we will apply some settings to the 
 ## Dockerfile and docker-compose
 
 the Dockerfile is a file needed to inform docker the steps that we need to do to build our container:
-so first thing first create a new file called "Dockerfile" without any extention and paste on it the step commands like following (this is just an example project): 
+so first thing first create a new file called "Dockerfile" without any extention and paste on it the step commands like following (this is just an example project):  
 
-```Dockerfile
+```docker
     FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
     WORKDIR /app
     EXPOSE 5000
-    
+
     FROM habbachi/nodedotnetsdk AS build
     WORKDIR /src
     COPY Auerswald.IdentityServer.Web/Auerswald.IdentityServer.Web.csproj Auerswald.IdentityServer.Web/
@@ -128,10 +128,10 @@ so first thing first create a new file called "Dockerfile" without any extention
     WORKDIR /src/Auerswald.IdentityServer.Web
     RUN npm run default
     RUN dotnet build Auerswald.IdentityServer.Web.csproj -c Release -o /app
-    
+
     FROM build AS publish
     RUN dotnet publish Auerswald.IdentityServer.Web.csproj -c Release -o /app
-    
+
     FROM base AS final
     WORKDIR /app
     COPY --from=publish /app .

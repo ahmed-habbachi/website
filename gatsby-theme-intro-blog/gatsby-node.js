@@ -2,53 +2,21 @@ exports.onPreBootstrap = require("./src/gatsby/node/onPreBootstrap")
 exports.sourceNodes = require("./src/gatsby/node/sourceNodes")
 exports.createPages = require("./src/gatsby/node/createPages")
 
-// const path = require("path")
+const { createFilePath } = require('gatsby-source-filesystem')
 
-// exports.createPages = ({ actions, graphql }) => {
-//   const { createPage } = actions
-
-//   const postTemplate = path.resolve("src/templates/post.js")
-
-//   return graphql(`
-//     {
-//       allMarkdownRemark(
-//         limit: 10
-//         filter: { frontmatter: { published: { eq: true } } }
-//         sort: { fields: [frontmatter___date], order: DESC }
-//       ) {
-//         edges {
-//           node {
-//             id
-//             excerpt
-//             frontmatter {
-//               title
-//               path
-//               date
-//               category
-//               tags
-//               featuredImage {
-//                 publicURL
-//                 childImageSharp {
-//                   fluid {
-//                     src
-//                   }
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `).then(res => {
-//     if (res.errors) {
-//       return Promise.reject(res.errors)
-//     }
-
-//     res.data.allMarkdownRemark.edges.forEach(({ node }) => {
-//       createPage({
-//         path: node.frontmatter.path,
-//         component: postTemplate,
-//       })
-//     })
-//   })
-// }
+// Here we're adding extra stuff to the "node" (like the slug)
+// so we can query later for all blogs and get their slug
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === 'Mdx') {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      // Individual MDX node
+      node,
+      // Name of the field you are adding
+      name: 'slug',
+      // Generated value based on filepath with "blog" prefix
+      value: `/posts${value}`
+    })
+  }
+}
