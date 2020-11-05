@@ -3,6 +3,7 @@ layout: '[post]'
 path: '/new-dotnet-docker-env-with-node-and-mariadb'
 title: New dotnet docker environment with node and mariadb
 date: 2018-09-21 17:43:38
+category: IT
 tags: [Docker, Mariadb, Node, .Net Core, ASP.Net Core]
 featuredImage: ./docker-banner.png
 published: true

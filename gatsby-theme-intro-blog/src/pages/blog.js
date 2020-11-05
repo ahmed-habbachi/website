@@ -15,13 +15,15 @@ const BlogPage = ({data}) => {
             Blog
           </h2>
             {posts.map(({node}) => {
-              const {title, date} = node.frontmatter;
+              const {title, date, category, tags} = node.frontmatter;
 
               return (
                 <PostPreview key={node.id} post={{
                   title: title,
                   path: node.slug,
                   date: date,
+                  category: category,
+                  tags: tags,
                   excerpt: node.excerpt
                 }} />
               )
@@ -39,7 +41,7 @@ export default BlogPage;
 
 export const query = graphql`
   query {
-    allMdx (sort: {fields: frontmatter___date, order: DESC}){
+    allMdx (sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {published: {eq: true}}}){
       edges {
         node {
           id
@@ -49,6 +51,16 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM YYYY")
             path
+            category
+            tags
+            featuredImage {
+              name
+              childImageSharp {
+                fixed(width: 590) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

@@ -45,7 +45,7 @@ export const query = graphql`
         ...ProjectFragment
       }
     }
-    allMdx (limit: 3, sort: {fields: frontmatter___date, order: DESC}){
+    allMdx (limit: 3, sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {published: {eq: true}}}){
       edges {
         node {
           id
@@ -54,6 +54,8 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM YYYY")
+            category
+            tags
           }
         }
       }
