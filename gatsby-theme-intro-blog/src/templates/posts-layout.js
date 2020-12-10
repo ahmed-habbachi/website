@@ -13,7 +13,7 @@ const PostsLayout = ({data}) => {
   return (
     <LayoutTemplate>
       <main className="w-11/12 sm:w-11/12 md:w-11/12 lg:w-2/3 lg:pl-8 xl:pl-12">
-      {frontmatter.featuredImage && <Img key={frontmatter.featuredImage.name} fixed={frontmatter.featuredImage.childImageSharp.fixed} alt={frontmatter.featuredImage.name} />}
+      {frontmatter.featuredImage && <Img key={frontmatter.featuredImage.name} fluid={frontmatter.featuredImage.childImageSharp.fluid} alt={frontmatter.featuredImage.name} />}
         <h1 className="text-2xl font-bold sm:text-4xl" >{frontmatter.title}</h1>
         <PostDetails post={frontmatter} className="text-base font-normal"/>
         <article className="py-12 prose prose-sm sm:prose lg:prose-lg xl:prose-xl sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
@@ -44,8 +44,8 @@ export const query = graphql
                 featuredImage {
                   name
                   childImageSharp {
-                    fixed(width: 590) {
-                      ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 600 ) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
