@@ -6,6 +6,7 @@
     - Typescript
     - Angular
   icon: website
+  image: images/Veggui.jpg
 
 - name: Track-it
   url: https://trackit.case-deutschland.de
