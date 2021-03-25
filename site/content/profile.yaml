@@ -12,21 +12,21 @@
   focus_url: https://case-deutschland.de
   about: |
     Mainly I am a full stack developer (main stack: Angular as frontend and ASP.Net core api as backend).
-    I started my coding life with ".Net/.Net Core" (C#) solutions developer,wrote (ASP.Net /ASP.Net Core) Applications, Windows Application and Implemented end-user GPS application, then soon i understood that the web is the future.
+    I started my coding life with ".Net/.Net Core" (C#) solutions developer, wrote (ASP.Net /ASP.Net Core) Applications, Windows Application and Services, then soon I understood that the web is the future.
 
-    So lately i've been focusing on Web technology and JavaScript/Typescript language and creating solutions with Angular framework.
+    So lately I've been focusing on Web technologies and JavaScript/Typescript languages and creating solutions with Angular framework, therefore I used a lot of Azure and AWS services.
 
-    And on my spare times i am the sys admin of our small company and my home servers;
+    And on my spare times I am the sys admin of our small company and my home servers;
     - Installed and maintaining our domain controller.
     - Implementing Git and GitLab as version controller (with all CI/CD flows).
     - And all VPN and File Sharing stuff.
     - Created my home media server and all the tests sandboxs containers.
 
-    Oh yes i need to mention that i am a supper fan of containers (previously was fan of virtualisation).
+    Oh yes I need to mention that I am a supper fan of containers (previously was fan of virtualisation).
   skills:
-    - JavaScript / Typescript
-    - HTML / CSS
     - C# / ASP.Net core
+    - JavaScript / Typescript
+    - Azure / AWS
   tools:
     - Angular
     - VSCode
