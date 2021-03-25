@@ -60,6 +60,11 @@ const SEO = props => {
           content: description,
         },
       ].concat(meta)}
+      link={[
+        { rel: "icon", type: "image/png", sizes: "32x32", href: "/images/favicon/favicon-32x32.png" },
+        { rel: "shortcut icon", type: "image/png", href: "/images/favicon/favicon.ico" },
+        { rel: "manifest", type: "image/png", href: "/images/favicon/site.webmanifest" },
+      ]}
     />
   )
 }

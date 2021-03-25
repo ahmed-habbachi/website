@@ -29,6 +29,12 @@ module.exports = ({
       {
         resolve: `gatsby-source-filesystem`,
         options: {
+          path: `static/images/favicon`,
+        },
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
           path: contentPath,
         },
       },
