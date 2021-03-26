@@ -16,6 +16,8 @@ const LayoutTemplate = ({children, posts}) => (
             siteMetadata {
               showThemeLogo
               showPostsInIndex
+              showBlogButton
+              showDownloadCVButton
             }
           }
           profile: profileYaml {
@@ -35,7 +37,9 @@ const LayoutTemplate = ({children, posts}) => (
         <StructuredData profile={data.profile} social={data.social.nodes} />
         <CustomFonts />
 
-        <Header initials={data.profile.initials} />
+        <Header initials={data.profile.initials}
+                showBlogButton={data.site.siteMetadata.showBlogButton}
+                showDownloadCVButton={data.site.siteMetadata.showDownloadCVButton}/>
 
         <div className="min-h-full md:max-w-screen-sm lg:max-w-screen-xl mx-auto px-4 flex flex-wrap pt-4 my-8">
           <Sidebar profile={data.profile} social={data.social.nodes} posts={posts} showPostsInIndex={data.site.siteMetadata.showPostsInIndex}/>

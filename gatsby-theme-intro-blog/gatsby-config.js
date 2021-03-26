@@ -3,6 +3,8 @@ module.exports = ({
   contentPath = "content/",
   showThemeLogo = true,
   showPostsInIndex = true,
+  showBlogButton = true,
+  showDownloadCVButton = true,
   theme = "classic",
 }) => {
   return {
@@ -12,6 +14,8 @@ module.exports = ({
       locale: "en",
       showThemeLogo,
       showPostsInIndex,
+      showBlogButton,
+      showDownloadCVButton
     },
     plugins: [
       {

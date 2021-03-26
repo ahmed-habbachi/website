@@ -12,6 +12,8 @@ module.exports = {
         contentPath: "content/",
         showThemeLogo: true,
         showPostsInIndex: true,
+        showBlogButton: true,
+        showDownloadCVButton: true,
         theme: "gh-inspired",
       },
     },
