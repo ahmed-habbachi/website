@@ -10,14 +10,14 @@ on:
     branches: [ master ]
 
 jobs:
-    
+
   build-and-deploy:
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 15.x]
+        node-version: [12.x]
 
     steps:
       - name: Checkout 🛎️
@@ -29,26 +29,26 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          
-      - name: Install Yarn 🔧
+
+      - name: Install Yarn 💾
         run: |
           npm install --global yarn
-          
-      - name: Install Packages 🔧
+
+      - name: Install Packages 📦
         run: |
           yarn install
-      - name: Clean workspace 🔧
+      - name: Clean workspace 🧹
         run: |
           yarn workspace site clean
 
       - name: Build website 🔧
         run: |
           yarn workspace site build
-          
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: dist/notification-center-demo # The folder the action should deploy.
+          FOLDER: site/public # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
