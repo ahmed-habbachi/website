@@ -30,9 +30,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install Yarn 💾
-        run: |
-          npm install --global yarn
+      # - name: Install Yarn 💾
+      #   run: |
+      #     npm install --global yarn
 
       - name: Install Packages 📦
         run: |
@@ -40,6 +40,12 @@ jobs:
       - name: Clean workspace 🧹
         run: |
           yarn workspace site clean
+
+      - name: Build theme 🔧
+        run: |
+          cd gatsby-theme-intro-blog
+      - run: npm run build
+      - run: cd ..
 
       - name: Build website 🔧
         run: |
