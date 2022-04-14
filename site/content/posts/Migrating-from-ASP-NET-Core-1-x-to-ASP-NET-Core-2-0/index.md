@@ -2,7 +2,7 @@
 path: '/Migrating-from-ASP-NET-Core-1-x-to-ASP-NET-Core-2-0'
 title: Migrating from ASP.NET Core 1.x to ASP.NET Core 2.0
 date: 2017-11-01 13:34:40
-category: Developement
+category: Development
 tags: [.Net Core, ASP.Net Core, Migration]
 featuredImage: ./ASP-NET-Core-Banner.png
 published: true

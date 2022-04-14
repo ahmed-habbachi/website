@@ -1,7 +1,7 @@
 ---
 title: integrating ngrid step by step
 date: 2020-09-14 17:20:28
-category: Developement
+category: Development
 tags: [Angular]
 featuredImage: ./ASP-NET-Core-Banner.png
 published: false

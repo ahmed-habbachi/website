@@ -2,7 +2,7 @@
 path: '/SMTP-Email-Sender-Service-for-NET-Standard-2-0'
 title: SMTP Email Sender Service for .NET Standard 2.0
 date: 2017-11-02 15:30:00
-category: Developement
+category: Development
 tags: [SMPT, Email, .Net Standard, .Net Core, ASP.Net Core,]
 featuredImage: ./Email-smtp.png
 published: true
